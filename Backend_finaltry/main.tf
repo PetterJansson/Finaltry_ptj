@@ -16,10 +16,6 @@ terraform {
   }
 }
 
-
-
-
-
 provider "azurerm" {
   features {
     key_vault {
@@ -34,7 +30,6 @@ resource "random_string" "random_string" {
   upper   = false
   special = false
 }
-
 
 resource "azurerm_resource_group" "rg_backend_ptjft" {
   name     = var.rg_backend_ptj_name
@@ -54,8 +49,6 @@ resource "azurerm_storage_container" "sc_backend_ptj" {
     storage_account_name  = azurerm_storage_account.sa_backend_ptj.name
     container_access_type = "private"
 }
-
-
 
 data "azurerm_client_config" "current" {}
 
